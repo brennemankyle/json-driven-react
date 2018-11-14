@@ -1,8 +1,8 @@
 {
   "name": "json-driven-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Convert's JSON to React and vise versa",
-  "main": "index.js",
+  "main": "JsonDrivenReact.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
