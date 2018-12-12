@@ -16,12 +16,16 @@ class JsonDrivenReact extends Component {
         item.props = item.props || {}
         item.props.key = item.props.key || index
 
-        return React.createElement(
-          item.element,
-          item.props,
-          item.children
-            ? React.createElement(JsonDrivenReact, {props: item.children})
-            : undefined)
+        if (item.children) {
+          return React.createElement(
+            item.element,
+            item.props,
+            React.createElement(JsonDrivenReact, {props: item.children}))
+        } else {
+          return React.createElement(
+            item.element,
+            item.props)
+        }
       }))
     } else {
       // Json is plain content
