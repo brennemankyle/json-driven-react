@@ -1,6 +1,7 @@
 class JsonComponentize {
   constructor(translator) {
     this.translator = translator
+    this.translate = this.translate.bind(this)
   }
 
   translate(json) {
@@ -13,6 +14,8 @@ class JsonComponentize {
         this.translate(item.children)
       }))
     }
+
+    return json
   }
 }
 
