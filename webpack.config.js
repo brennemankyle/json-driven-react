@@ -1,23 +1,31 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/JsonDrivenReact.js',
+  devtool: 'hidden-source-map',
+  entry: './src/index.js',
   output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve('./dist'),
+    filename: '[name].min.js',
+    libraryTarget: 'var',
+  },
+  externals: {
+    'react': 'React',
+  },
+  resolve: {
+    extensions: ['.js', '.json'],
+  },
+  node: {
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty',
   },
   module: {
     rules: [
       {
-        test: /\.m?js$/,
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-react']
-          }
-        }
-      }
-    ]
-  }
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+      },
+    ],
+  },
 };
