@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 
-window.React = React
-
 class JsonDrivenReact extends Component {
   render() {
     if (!this.props) return null
