@@ -4,7 +4,7 @@ class JsonDrivenReact extends Component {
   render() {
     if (!this.props) return null
 
-    let json = {...this.props} // The JSON is on this components props
+    let json = Object.assign({}, this.props) // The JSON is on this components props
 
     return this.toReact(json)
   }
