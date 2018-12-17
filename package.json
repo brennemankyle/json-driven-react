@@ -1,6 +1,6 @@
 {
   "name": "json-driven-react",
-  "version": "1.6.2",
+  "version": "1.6.3",
   "description": "Converts JSON to React",
   "main": "dist/main.min.js",
   "scripts": {

@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 
+window.React = React
+
 class JsonDrivenReact extends Component {
   render() {
-    if (!this.props.props) return null
+    if (!this.props) return null
 
-    let json = this.props.props // The JSON is on this components props
+    let json = {...this.props} // The JSON is on this components props
 
     return this.toReact(json)
   }
@@ -20,7 +22,7 @@ class JsonDrivenReact extends Component {
           return React.createElement(
             item.element,
             item.props,
-            React.createElement(JsonDrivenReact, {props: item.children}))
+            ...this.toReact(item.children))
         } else {
           return React.createElement(
             item.element,
