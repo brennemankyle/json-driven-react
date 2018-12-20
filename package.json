@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
-    "prepare": "npm run build"
+    "transpile": "babel ./src --out-dir ./dist",
+    "prepare": "npm run transpile"
   },
   "keywords": [
     "json",
@@ -18,8 +19,9 @@
   "author": "Kyle Brenneman <brenneman.kyle@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.0",
-    "@babel/preset-env": "^7.2.0",
+    "@babel/preset-env": "^7.2.3",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.4",
     "webpack": "^4.27.1",
@@ -27,5 +29,12 @@
   },
   "dependencies": {
     "react": "^16.6.3"
+  },
+  "browserslist": "> 0.25%, not dead",
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
   }
 }
