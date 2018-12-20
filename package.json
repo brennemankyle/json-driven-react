@@ -1,8 +1,8 @@
 {
   "name": "json-driven-react",
-  "version": "1.6.7",
+  "version": "1.7.0",
   "description": "Converts JSON to React",
-  "main": "dist/main.min.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
