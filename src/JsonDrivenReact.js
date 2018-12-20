@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 class JsonDrivenReact extends Component {
   render() {
-    if (!this.props) return null
+    if (!this.props || !this.props.json) return null
 
     return this.toReact(this.props.json)
   }
