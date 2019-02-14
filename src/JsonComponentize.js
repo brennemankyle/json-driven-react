@@ -10,7 +10,7 @@ class JsonComponentize {
         if (typeof item.element === 'string' && !!item.element.match(/^[A-Z].*/)) {
           let component = this.translator[item.element]
 
-          if (!component) throw new Error('Cannot find component named "' + item.element + '" in componentized translator'')
+          if (!component) throw new Error('Cannot find component named "' + item.element + '" in componentized translator')
 
           item.element = component
         } else {
