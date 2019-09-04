@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
+import JsonComponentize from './JsonComponentize'
 
 class JsonDrivenReact extends Component {
   render() {
     if (!this.props || !this.props.json) return null
 
-    return this.toReact(this.props.json)
+    let jsonComponentize = new JsonComponentize(this.props.translate)
+
+    return this.toReact(jsonComponentize.translate(this.props.json))
   }
 
   toReact(json) {
@@ -30,6 +33,10 @@ class JsonDrivenReact extends Component {
       return json
     }
   }
+}
+
+JsonDrivenReact.defaultProps = {
+  translate: {}
 }
 
 export default JsonDrivenReact
