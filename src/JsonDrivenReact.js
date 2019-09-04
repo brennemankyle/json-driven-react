@@ -5,7 +5,7 @@ class JsonDrivenReact extends Component {
   render() {
     if (!this.props || !this.props.json) return null
 
-    let jsonComponentize = new JsonComponentize(this.props.translate)
+    let jsonComponentize = new JsonComponentize(this.props.componentMap)
 
     return this.toReact(jsonComponentize.translate(this.props.json))
   }
@@ -36,7 +36,7 @@ class JsonDrivenReact extends Component {
 }
 
 JsonDrivenReact.defaultProps = {
-  translate: {}
+  componentMap: {}
 }
 
 export default JsonDrivenReact
